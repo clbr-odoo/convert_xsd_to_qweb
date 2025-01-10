@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='ASCII'?>
+<odoo>
+    <!--Automatically generated from XSD file: https://docs.oasis-open.org/ubl/os-UBL-2.1/xsdrt/-->
+    <!--with script <TODO insert url>-->
+    <template id="ubl_21_CreditNote">
+        <t t-call="account_edi_ubl_cii.ubl_21_CreditNoteType"/>
+    </template>
+    <template xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" id="ubl_21_CreditNoteType">
+        <ext:UBLExtensions>
+            <t t-call="account_edi_ubl_cii.ubl_21_UBLExtensions">
+                <t t-set="vals" t-value="vals.get('ublextensions', {}"/>
+            </t>
+        </ext:UBLExtensions>
+        <cbc:UBLVersionID t-out="vals.get('ublversion_id')" t-att="ublversion_id_attrs"/>
+        <cbc:CustomizationID t-out="vals.get('customization_id')" t-att="customization_id_attrs"/>
+        <cbc:ProfileID t-out="vals.get('profile_id')" t-att="profile_id_attrs"/>
+        <cbc:ProfileExecutionID t-out="vals.get('profile_execution_id')" t-att="profile_execution_id_attrs"/>
+        <cbc:ID t-out="vals.get('id')" t-att="id_attrs"/>
+        <cbc:CopyIndicator t-out="vals.get('copy_indicator')" t-att="copy_indicator_attrs"/>
+        <cbc:UUID t-out="vals.get('uuid')" t-att="uuid_attrs"/>
+        <cbc:IssueDate t-out="vals.get('issue_date')" t-att="issue_date_attrs"/>
+        <cbc:IssueTime t-out="vals.get('issue_time')" t-att="issue_time_attrs"/>
+        <cbc:TaxPointDate t-out="vals.get('tax_point_date')" t-att="tax_point_date_attrs"/>
+        <cbc:CreditNoteTypeCode t-out="vals.get('credit_note_type_code')" t-att="credit_note_type_code_attrs"/>
+        <cbc:Note t-out="vals.get('note')" t-att="note_attrs"/>
+        <cbc:DocumentCurrencyCode t-out="vals.get('document_currency_code')" t-att="document_currency_code_attrs"/>
+        <cbc:TaxCurrencyCode t-out="vals.get('tax_currency_code')" t-att="tax_currency_code_attrs"/>
+        <cbc:PricingCurrencyCode t-out="vals.get('pricing_currency_code')" t-att="pricing_currency_code_attrs"/>
+        <cbc:PaymentCurrencyCode t-out="vals.get('payment_currency_code')" t-att="payment_currency_code_attrs"/>
+        <cbc:PaymentAlternativeCurrencyCode t-out="vals.get('payment_alternative_currency_code')" t-att="payment_alternative_currency_code_attrs"/>
+        <cbc:AccountingCostCode t-out="vals.get('accounting_cost_code')" t-att="accounting_cost_code_attrs"/>
+        <cbc:AccountingCost t-out="vals.get('accounting_cost')" t-att="accounting_cost_attrs"/>
+        <cbc:LineCountNumeric t-out="vals.get('line_count_numeric')" t-att="line_count_numeric_attrs"/>
+        <cbc:BuyerReference t-out="vals.get('buyer_reference')" t-att="buyer_reference_attrs"/>
+        <cac:InvoicePeriod t-foreach="vals.get('invoice_period_list, [])" t-as="invoice_period">
+            <t t-call="account_edi_ubl_cii.ubl_21_InvoicePeriod">
+                <t t-set="vals" t-value="invoice_period"/>
+            </t>
+        </cac:InvoicePeriod>
+        <cac:DiscrepancyResponse t-foreach="vals.get('discrepancy_response_list, [])" t-as="discrepancy_response">
+            <t t-call="account_edi_ubl_cii.ubl_21_DiscrepancyResponse">
+                <t t-set="vals" t-value="discrepancy_response"/>
+            </t>
+        </cac:DiscrepancyResponse>
+        <cac:OrderReference>
+            <t t-call="account_edi_ubl_cii.ubl_21_OrderReference">
+                <t t-set="vals" t-value="vals.get('order_reference', {}"/>
+            </t>
+        </cac:OrderReference>
+        <cac:BillingReference t-foreach="vals.get('billing_reference_list, [])" t-as="billing_reference">
+            <t t-call="account_edi_ubl_cii.ubl_21_BillingReference">
+                <t t-set="vals" t-value="billing_reference"/>
+            </t>
+        </cac:BillingReference>
+        <cac:DespatchDocumentReference t-foreach="vals.get('despatch_document_reference_list, [])" t-as="despatch_document_reference">
+            <t t-call="account_edi_ubl_cii.ubl_21_DespatchDocumentReference">
+                <t t-set="vals" t-value="despatch_document_reference"/>
+            </t>
+        </cac:DespatchDocumentReference>
+        <cac:ReceiptDocumentReference t-foreach="vals.get('receipt_document_reference_list, [])" t-as="receipt_document_reference">
+            <t t-call="account_edi_ubl_cii.ubl_21_ReceiptDocumentReference">
+                <t t-set="vals" t-value="receipt_document_reference"/>
+            </t>
+        </cac:ReceiptDocumentReference>
+        <cac:ContractDocumentReference t-foreach="vals.get('contract_document_reference_list, [])" t-as="contract_document_reference">
+            <t t-call="account_edi_ubl_cii.ubl_21_ContractDocumentReference">
+                <t t-set="vals" t-value="contract_document_reference"/>
+            </t>
+        </cac:ContractDocumentReference>
+        <cac:AdditionalDocumentReference t-foreach="vals.get('additional_document_reference_list, [])" t-as="additional_document_reference">
+            <t t-call="account_edi_ubl_cii.ubl_21_AdditionalDocumentReference">
+                <t t-set="vals" t-value="additional_document_reference"/>
+            </t>
+        </cac:AdditionalDocumentReference>
+        <cac:StatementDocumentReference t-foreach="vals.get('statement_document_reference_list, [])" t-as="statement_document_reference">
+            <t t-call="account_edi_ubl_cii.ubl_21_StatementDocumentReference">
+                <t t-set="vals" t-value="statement_document_reference"/>
+            </t>
+        </cac:StatementDocumentReference>
+        <cac:OriginatorDocumentReference t-foreach="vals.get('originator_document_reference_list, [])" t-as="originator_document_reference">
+            <t t-call="account_edi_ubl_cii.ubl_21_OriginatorDocumentReference">
+                <t t-set="vals" t-value="originator_document_reference"/>
+            </t>
+        </cac:OriginatorDocumentReference>
+        <cac:Signature t-foreach="vals.get('signature_list, [])" t-as="signature">
+            <t t-call="account_edi_ubl_cii.ubl_21_Signature">
+                <t t-set="vals" t-value="signature"/>
+            </t>
+        </cac:Signature>
+        <cac:AccountingSupplierParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_AccountingSupplierParty">
+                <t t-set="vals" t-value="vals.get('accounting_supplier_party', {}"/>
+            </t>
+        </cac:AccountingSupplierParty>
+        <cac:AccountingCustomerParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_AccountingCustomerParty">
+                <t t-set="vals" t-value="vals.get('accounting_customer_party', {}"/>
+            </t>
+        </cac:AccountingCustomerParty>
+        <cac:PayeeParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_PayeeParty">
+                <t t-set="vals" t-value="vals.get('payee_party', {}"/>
+            </t>
+        </cac:PayeeParty>
+        <cac:BuyerCustomerParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_BuyerCustomerParty">
+                <t t-set="vals" t-value="vals.get('buyer_customer_party', {}"/>
+            </t>
+        </cac:BuyerCustomerParty>
+        <cac:SellerSupplierParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_SellerSupplierParty">
+                <t t-set="vals" t-value="vals.get('seller_supplier_party', {}"/>
+            </t>
+        </cac:SellerSupplierParty>
+        <cac:TaxRepresentativeParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_TaxRepresentativeParty">
+                <t t-set="vals" t-value="vals.get('tax_representative_party', {}"/>
+            </t>
+        </cac:TaxRepresentativeParty>
+        <cac:Delivery t-foreach="vals.get('delivery_list, [])" t-as="delivery">
+            <t t-call="account_edi_ubl_cii.ubl_21_Delivery">
+                <t t-set="vals" t-value="delivery"/>
+            </t>
+        </cac:Delivery>
+        <cac:DeliveryTerms t-foreach="vals.get('delivery_terms_list, [])" t-as="delivery_terms">
+            <t t-call="account_edi_ubl_cii.ubl_21_DeliveryTerms">
+                <t t-set="vals" t-value="delivery_terms"/>
+            </t>
+        </cac:DeliveryTerms>
+        <cac:PaymentMeans t-foreach="vals.get('payment_means_list, [])" t-as="payment_means">
+            <t t-call="account_edi_ubl_cii.ubl_21_PaymentMeans">
+                <t t-set="vals" t-value="payment_means"/>
+            </t>
+        </cac:PaymentMeans>
+        <cac:PaymentTerms t-foreach="vals.get('payment_terms_list, [])" t-as="payment_terms">
+            <t t-call="account_edi_ubl_cii.ubl_21_PaymentTerms">
+                <t t-set="vals" t-value="payment_terms"/>
+            </t>
+        </cac:PaymentTerms>
+        <cac:TaxExchangeRate>
+            <t t-call="account_edi_ubl_cii.ubl_21_TaxExchangeRate">
+                <t t-set="vals" t-value="vals.get('tax_exchange_rate', {}"/>
+            </t>
+        </cac:TaxExchangeRate>
+        <cac:PricingExchangeRate>
+            <t t-call="account_edi_ubl_cii.ubl_21_PricingExchangeRate">
+                <t t-set="vals" t-value="vals.get('pricing_exchange_rate', {}"/>
+            </t>
+        </cac:PricingExchangeRate>
+        <cac:PaymentExchangeRate>
+            <t t-call="account_edi_ubl_cii.ubl_21_PaymentExchangeRate">
+                <t t-set="vals" t-value="vals.get('payment_exchange_rate', {}"/>
+            </t>
+        </cac:PaymentExchangeRate>
+        <cac:PaymentAlternativeExchangeRate>
+            <t t-call="account_edi_ubl_cii.ubl_21_PaymentAlternativeExchangeRate">
+                <t t-set="vals" t-value="vals.get('payment_alternative_exchange_rate', {}"/>
+            </t>
+        </cac:PaymentAlternativeExchangeRate>
+        <cac:AllowanceCharge t-foreach="vals.get('allowance_charge_list, [])" t-as="allowance_charge">
+            <t t-call="account_edi_ubl_cii.ubl_21_AllowanceCharge">
+                <t t-set="vals" t-value="allowance_charge"/>
+            </t>
+        </cac:AllowanceCharge>
+        <cac:TaxTotal t-foreach="vals.get('tax_total_list, [])" t-as="tax_total">
+            <t t-call="account_edi_ubl_cii.ubl_21_TaxTotal">
+                <t t-set="vals" t-value="tax_total"/>
+            </t>
+        </cac:TaxTotal>
+        <cac:LegalMonetaryTotal>
+            <t t-call="account_edi_ubl_cii.ubl_21_LegalMonetaryTotal">
+                <t t-set="vals" t-value="vals.get('legal_monetary_total', {}"/>
+            </t>
+        </cac:LegalMonetaryTotal>
+        <cac:CreditNoteLine t-foreach="vals.get('credit_note_line_list, [])" t-as="credit_note_line">
+            <t t-call="account_edi_ubl_cii.ubl_21_CreditNoteLine">
+                <t t-set="vals" t-value="credit_note_line"/>
+            </t>
+        </cac:CreditNoteLine>
+    </template>
+</odoo>

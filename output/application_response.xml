@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='ASCII'?>
+<odoo>
+    <!--Automatically generated from XSD file: https://docs.oasis-open.org/ubl/os-UBL-2.1/xsdrt/-->
+    <!--with script <TODO insert url>-->
+    <template id="ubl_21_ApplicationResponse">
+        <t t-call="account_edi_ubl_cii.ubl_21_ApplicationResponseType"/>
+    </template>
+    <template xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" id="ubl_21_ApplicationResponseType">
+        <ext:UBLExtensions>
+            <t t-call="account_edi_ubl_cii.ubl_21_UBLExtensions">
+                <t t-set="vals" t-value="vals.get('ublextensions', {}"/>
+            </t>
+        </ext:UBLExtensions>
+        <cbc:UBLVersionID t-out="vals.get('ublversion_id')" t-att="ublversion_id_attrs"/>
+        <cbc:CustomizationID t-out="vals.get('customization_id')" t-att="customization_id_attrs"/>
+        <cbc:ProfileID t-out="vals.get('profile_id')" t-att="profile_id_attrs"/>
+        <cbc:ProfileExecutionID t-out="vals.get('profile_execution_id')" t-att="profile_execution_id_attrs"/>
+        <cbc:ID t-out="vals.get('id')" t-att="id_attrs"/>
+        <cbc:UUID t-out="vals.get('uuid')" t-att="uuid_attrs"/>
+        <cbc:IssueDate t-out="vals.get('issue_date')" t-att="issue_date_attrs"/>
+        <cbc:IssueTime t-out="vals.get('issue_time')" t-att="issue_time_attrs"/>
+        <cbc:ResponseDate t-out="vals.get('response_date')" t-att="response_date_attrs"/>
+        <cbc:ResponseTime t-out="vals.get('response_time')" t-att="response_time_attrs"/>
+        <cbc:Note t-out="vals.get('note')" t-att="note_attrs"/>
+        <cbc:VersionID t-out="vals.get('version_id')" t-att="version_id_attrs"/>
+        <cac:Signature t-foreach="vals.get('signature_list, [])" t-as="signature">
+            <t t-call="account_edi_ubl_cii.ubl_21_Signature">
+                <t t-set="vals" t-value="signature"/>
+            </t>
+        </cac:Signature>
+        <cac:SenderParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_SenderParty">
+                <t t-set="vals" t-value="vals.get('sender_party', {}"/>
+            </t>
+        </cac:SenderParty>
+        <cac:ReceiverParty>
+            <t t-call="account_edi_ubl_cii.ubl_21_ReceiverParty">
+                <t t-set="vals" t-value="vals.get('receiver_party', {}"/>
+            </t>
+        </cac:ReceiverParty>
+        <cac:DocumentResponse t-foreach="vals.get('document_response_list, [])" t-as="document_response">
+            <t t-call="account_edi_ubl_cii.ubl_21_DocumentResponse">
+                <t t-set="vals" t-value="document_response"/>
+            </t>
+        </cac:DocumentResponse>
+    </template>
+</odoo>
